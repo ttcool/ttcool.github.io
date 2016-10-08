@@ -14,7 +14,7 @@
 <meta property="og:description" content="开始使用 Django 1.8安装虚拟环境有时你需要在你的电脑上开发多个Django项目，需要安装一些模块并共享给所有项目使用，比如Python的Pillow、MySQLdb。但有些Django库、第三方Python库、Django apps却需要独立运行。使用virtualenv工具能使各个Python项目在各自的环境下独立运行。
 123$ sudo pip install Pillow$ su">
 <meta property="og:image" content="http://7te8s3.com1.z0.glb.clouddn.com/file_structure.png">
-<meta property="og:updated_time" content="2016-10-08T06:30:09.000Z">
+<meta property="og:updated_time" content="2016-10-08T07:28:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开始使用 Django 1.8">
 <meta name="twitter:description" content="开始使用 Django 1.8安装虚拟环境有时你需要在你的电脑上开发多个Django项目，需要安装一些模块并共享给所有项目使用，比如Python的Pillow、MySQLdb。但有些Django库、第三方Python库、Django apps却需要独立运行。使用virtualenv工具能使各个Python项目在各自的环境下独立运行。
@@ -100,11 +100,15 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(myproject_env)$ pip install Django==1.8</div></pre></td></tr></table></figure>
 <h2 id="创建项目目录结构"><a href="#创建项目目录结构" class="headerlink" title="创建项目目录结构"></a>创建项目目录结构</h2><h3 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(myproject_env)$ django-admin.py startproject myproject</div></pre></td></tr></table></figure>
 <h3 id="总的目录结构"><a href="#总的目录结构" class="headerlink" title="总的目录结构"></a>总的目录结构</h3><p><img src="http://7te8s3.com1.z0.glb.clouddn.com/file_structure.png" alt="Alt text"></p>
+<h3 id="创建requirements目录及下面的-txt文件"><a href="#创建requirements目录及下面的-txt文件" class="headerlink" title="创建requirements目录及下面的.txt文件"></a>创建requirements目录及下面的.txt文件</h3><h3 id="base-txt-共享模块"><a href="#base-txt-共享模块" class="headerlink" title="base.txt 共享模块"></a>base.txt 共享模块</h3><h3 id="dev-txt-开发环境"><a href="#dev-txt-开发环境" class="headerlink" title="dev. txt 开发环境"></a>dev. txt 开发环境</h3><h3 id="test-txt-测试环境"><a href="#test-txt-测试环境" class="headerlink" title="test.txt 测试环境"></a>test.txt 测试环境</h3><h3 id="staging-txt-staging环境"><a href="#staging-txt-staging环境" class="headerlink" title="staging.txt staging环境"></a>staging.txt staging环境</h3><h3 id="prod-txt-生产环境"><a href="#prod-txt-生产环境" class="headerlink" title="prod.txt 生产环境"></a>prod.txt 生产环境</h3><h3 id="编辑base-txt"><a href="#编辑base-txt" class="headerlink" title="编辑base.txt"></a>编辑base.txt</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Django==1.8</div><div class="line">djangorestframework</div><div class="line"><span class="_">-e</span> git://github.com/omab/python-social-auth.</div><div class="line">git@6b1e301c79<span class="comment">#egg=python-social-auth</span></div></pre></td></tr></table></figure>
+<h3 id="编辑prod-txt"><a href="#编辑prod-txt" class="headerlink" title="编辑prod.txt"></a>编辑prod.txt</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-r base.txt</div></pre></td></tr></table></figure>
+<h3 id="编辑dev-txt"><a href="#编辑dev-txt" class="headerlink" title="编辑dev.txt"></a>编辑dev.txt</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-r base.txt</div><div class="line">django-debug-toolbar</div><div class="line">selenium</div></pre></td></tr></table></figure>
+<h3 id="使用如下命令安装开发环境依赖包"><a href="#使用如下命令安装开发环境依赖包" class="headerlink" title="使用如下命令安装开发环境依赖包"></a>使用如下命令安装开发环境依赖包</h3><p>(myproject_env)$ pip install -r requirements/dev.txt</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/30/start-with-django/" data-id="ciu0torl50000k3m7qfxgggc1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/09/30/start-with-django/" data-id="ciu0vq6840000ujm7makormzf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django-1-8/">Django 1.8</a></li></ul>
